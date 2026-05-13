@@ -5,6 +5,9 @@ import Container from '../ui/Container';
 import Button from '../ui/Button';
 import { NAV_LINKS } from '../../lib/constants';
 import { cn } from '../../lib/utils';
+import { COPY } from '../../data/copy';
+
+const BRAND_BASE = COPY.brand.name.replace(COPY.brand.nameAccent, '');
 
 function Navbar() {
   const location = useLocation();
@@ -25,8 +28,8 @@ function Navbar() {
             className="flex items-baseline gap-1 font-serif text-2xl"
             onClick={() => setMobileOpen(false)}
           >
-            <span className="text-espresso">Kopi</span>
-            <span className="text-caramel">Ku</span>
+            <span className="text-espresso">{BRAND_BASE}</span>
+            <span className="text-caramel">{COPY.brand.nameAccent}</span>
             <span className="ml-1 text-[10px] tracking-widest text-roast font-sans font-medium">
               DIGITAL
             </span>
@@ -52,7 +55,7 @@ function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               to="/order"
-              aria-label={`Keranjang${cartCount > 0 ? `, ${cartCount} item` : ''}`}
+              aria-label={`${COPY.nav.cart}${cartCount > 0 ? `, ${cartCount} item` : ''}`}
               className="relative inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-cream transition-colors"
             >
               <ShoppingBag className="w-5 h-5 text-espresso" aria-hidden="true" />
@@ -65,7 +68,7 @@ function Navbar() {
 
             <Link to="/order" className="hidden md:inline-flex">
               <Button variant="primary" size="sm">
-                Pre-order
+                {COPY.nav.preOrder}
               </Button>
             </Link>
 
@@ -111,7 +114,7 @@ function Navbar() {
               ))}
               <Link to="/order" onClick={() => setMobileOpen(false)} className="mt-2">
                 <Button variant="primary" size="md" className="w-full">
-                  Pre-order
+                  {COPY.nav.preOrder}
                 </Button>
               </Link>
             </nav>

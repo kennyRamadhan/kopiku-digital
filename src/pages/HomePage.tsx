@@ -1,13 +1,14 @@
-import Container from '../components/ui/Container';
-import Section from '../components/ui/Section';
+import Hero from '../components/home/Hero';
+import ValueProps from '../components/home/ValueProps';
+import FeaturedMenu from '../components/home/FeaturedMenu';
 
 function HomePage() {
   return (
-    <Container>
-      <Section>
-        <h1>Home</h1>
-      </Section>
-    </Container>
+    <>
+      <Hero />
+      <ValueProps />
+      <FeaturedMenu />
+    </>
   );
 }
 
