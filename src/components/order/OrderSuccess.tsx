@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { CircleCheck } from 'lucide-react';
-import Button from '../ui/Button';
+import { buttonClasses } from '../ui/Button';
 import { COPY } from '../../data/copy';
 
 interface OrderSuccessProps {
@@ -21,15 +21,11 @@ function OrderSuccess({ onOrderAgain }: OrderSuccessProps) {
       <p className="mt-3 text-roast leading-relaxed">{COPY.order.successSubtitle}</p>
 
       <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-        <Link to="/menu" onClick={onOrderAgain}>
-          <Button variant="primary" size="md">
-            {COPY.order.successCta}
-          </Button>
+        <Link to="/menu" onClick={onOrderAgain} className={buttonClasses('primary', 'md')}>
+          {COPY.order.successCta}
         </Link>
-        <Link to="/">
-          <Button variant="secondary" size="md">
-            Kembali ke beranda
-          </Button>
+        <Link to="/" className={buttonClasses('secondary', 'md')}>
+          Kembali ke beranda
         </Link>
       </div>
     </div>

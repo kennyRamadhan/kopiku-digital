@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Container from '../ui/Container';
 import Section from '../ui/Section';
-import Button from '../ui/Button';
+import { buttonClasses } from '../ui/Button';
 import Badge from '../ui/Badge';
 import SafeImage from '../ui/SafeImage';
 import { COPY } from '../../data/copy';
@@ -24,15 +24,11 @@ function Hero() {
               {COPY.home.heroSubtext}
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-3">
-              <Link to="/menu">
-                <Button variant="primary" size="lg">
-                  {COPY.home.heroCtaPrimary}
-                </Button>
+              <Link to="/menu" className={buttonClasses('primary', 'lg')}>
+                {COPY.home.heroCtaPrimary}
               </Link>
-              <Link to="/menu">
-                <Button variant="secondary" size="lg">
-                  {COPY.home.heroCtaSecondary}
-                </Button>
+              <Link to="/menu" className={buttonClasses('secondary', 'lg')}>
+                {COPY.home.heroCtaSecondary}
               </Link>
             </div>
           </div>

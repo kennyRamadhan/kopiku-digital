@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, ShoppingBag, X } from 'lucide-react';
 import Container from '../ui/Container';
-import Button from '../ui/Button';
+import { buttonClasses } from '../ui/Button';
 import ThemeToggle from './ThemeToggle';
 import { NAV_LINKS } from '../../lib/constants';
 import { cn } from '../../lib/utils';
@@ -90,10 +90,11 @@ function Navbar() {
               )}
             </Link>
 
-            <Link to="/order" className="hidden md:inline-flex">
-              <Button variant="primary" size="sm">
-                {COPY.nav.preOrder}
-              </Button>
+            <Link
+              to="/order"
+              className={cn('hidden md:inline-flex', buttonClasses('primary', 'sm'))}
+            >
+              {COPY.nav.preOrder}
             </Link>
 
             <button
@@ -137,10 +138,8 @@ function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link to="/order" className="mt-2">
-              <Button variant="primary" size="md" className="w-full">
-                {COPY.nav.preOrder}
-              </Button>
+            <Link to="/order" className={buttonClasses('primary', 'md', 'mt-2 w-full')}>
+              {COPY.nav.preOrder}
             </Link>
           </nav>
         </Container>

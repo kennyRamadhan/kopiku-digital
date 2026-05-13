@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Container from '../components/ui/Container';
 import Section from '../components/ui/Section';
-import Button from '../components/ui/Button';
+import Button, { buttonClasses } from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import CartItem from '../components/order/CartItem';
 import PickupTimeSelector from '../components/order/PickupTimeSelector';
@@ -51,10 +51,8 @@ function EmptyCart() {
   return (
     <Card padding="lg" className="text-center max-w-md mx-auto">
       <p className="text-roast">{COPY.menu.emptyCart}</p>
-      <Link to="/menu" className="inline-block mt-5">
-        <Button variant="primary" size="md">
-          Lihat menu
-        </Button>
+      <Link to="/menu" className={buttonClasses('primary', 'md', 'mt-5')}>
+        Lihat menu
       </Link>
     </Card>
   );
