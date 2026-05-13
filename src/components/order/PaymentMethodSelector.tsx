@@ -27,7 +27,7 @@ function PaymentMethodSelector({ value, onChange }: PaymentMethodSelectorProps) 
               aria-checked={isActive}
               onClick={() => onChange(method.id as PaymentMethod)}
               className={cn(
-                'flex flex-col items-center justify-center text-center px-3 py-4 rounded-lg bg-[#FFFCF7] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-espresso focus-visible:ring-offset-2 focus-visible:ring-offset-beige',
+                'flex flex-col items-center justify-center text-center px-3 py-4 rounded-lg bg-surface transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-espresso focus-visible:ring-offset-2 focus-visible:ring-offset-beige',
                 isActive
                   ? 'border-[1.5px] border-espresso'
                   : 'border border-espresso/15 hover:border-espresso/40',

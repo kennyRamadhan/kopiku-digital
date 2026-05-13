@@ -65,7 +65,7 @@ function ContactForm() {
             if (submitted) setSubmitted(false);
           }}
           className={cn(
-            'w-full bg-[#FFFCF7] border border-espresso/15 rounded-md px-3 py-2 text-charcoal placeholder:text-roast/60 focus:outline-none focus:border-espresso focus:ring-2 focus:ring-espresso/20 transition-colors resize-y',
+            'w-full bg-surface border border-espresso/15 rounded-md px-3 py-2 text-charcoal placeholder:text-roast/60 focus:outline-none focus:border-espresso focus:ring-2 focus:ring-espresso/20 transition-colors resize-y',
           )}
         />
       </div>

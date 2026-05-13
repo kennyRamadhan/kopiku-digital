@@ -11,6 +11,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>KopiKu Digital — Kopi enak, tanpa antri.</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('kopiku-theme');
+          // Default to dark unless user has explicitly chosen light.
+          var theme = stored === 'light' ? 'light' : 'dark';
+          if (theme === 'dark') document.documentElement.classList.add('dark');
+        } catch (e) {
+          /* ignore storage errors */
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

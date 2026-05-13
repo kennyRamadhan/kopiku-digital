@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, ShoppingBag, X } from 'lucide-react';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
+import ThemeToggle from './ThemeToggle';
 import { NAV_LINKS } from '../../lib/constants';
 import { cn } from '../../lib/utils';
 import { COPY } from '../../data/copy';
@@ -74,7 +75,8 @@ function Navbar() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <ThemeToggle />
             <Link
               to="/order"
               aria-label={`${COPY.nav.cart}${cartCount > 0 ? `, ${cartCount} item` : ''}`}

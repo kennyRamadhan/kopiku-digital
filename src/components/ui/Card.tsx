@@ -18,7 +18,7 @@ function Card({ padding = 'md', className, children, ...rest }: CardProps) {
   return (
     <div
       className={cn(
-        'bg-[#FFFCF7] border border-espresso/10 rounded-lg',
+        'bg-surface border border-espresso/10 rounded-lg',
         paddingClasses[padding],
         className,
       )}

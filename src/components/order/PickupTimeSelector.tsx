@@ -23,7 +23,7 @@ function PickupTimeSelector({ value, onChange }: PickupTimeSelectorProps) {
               'px-4 py-2 rounded-full text-sm font-medium border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-espresso focus-visible:ring-offset-2 focus-visible:ring-offset-beige',
               isActive
                 ? 'bg-espresso text-cream border-espresso'
-                : 'bg-[#FFFCF7] text-espresso border-espresso/15 hover:border-espresso',
+                : 'bg-surface text-espresso border-espresso/15 hover:border-espresso',
             )}
           >
             {option.label}

@@ -5,6 +5,22 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --c-beige: 250 246 240;
+    --c-charcoal: 44 24 16;
+    --c-roast: 111 78 55;
+    --c-caramel-deep: 160 97 44;
+    --c-surface: 255 252 247;
+  }
+
+  .dark {
+    --c-beige: 26 16 8;
+    --c-charcoal: 245 230 211;
+    --c-roast: 196 172 145;
+    --c-caramel-deep: 217 163 122;
+    --c-surface: 34 22 16;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -16,5 +32,59 @@
   h3,
   h4 {
     @apply font-serif text-espresso;
+  }
+
+  /* Dual-role token overrides — espresso and cream play different roles depending on
+     whether they're used for text or background, so we override the utility classes
+     in dark mode rather than flipping the underlying color. */
+  .dark h1,
+  .dark h2,
+  .dark h3,
+  .dark h4,
+  .dark .text-espresso {
+    color: #f5e6d3;
+  }
+  .dark .bg-cream {
+    background-color: rgb(34 22 16);
+  }
+  .dark .bg-cream\/40 {
+    background-color: rgb(34 22 16 / 0.4);
+  }
+  .dark .border-espresso\/10 {
+    border-color: rgb(245 230 211 / 0.1);
+  }
+  .dark .border-espresso\/15 {
+    border-color: rgb(245 230 211 / 0.15);
+  }
+  .dark .border-espresso\/20 {
+    border-color: rgb(245 230 211 / 0.2);
+  }
+  .dark .border-espresso {
+    border-color: rgb(245 230 211 / 0.25);
+  }
+  .dark .border-l-espresso {
+    border-left-color: rgb(245 230 211 / 0.25);
+  }
+  /* hover/focus variants of dark espresso utilities */
+  .dark .hover\:border-espresso:hover {
+    border-color: rgb(245 230 211 / 0.4);
+  }
+  .dark .hover\:text-espresso:hover {
+    color: #f5e6d3;
+  }
+  .dark .hover\:bg-cream:hover {
+    background-color: rgb(34 22 16);
+  }
+  .dark .focus-visible\:ring-espresso:focus-visible {
+    --tw-ring-color: #f5e6d3;
+  }
+  .dark .focus\:ring-espresso\/20:focus {
+    --tw-ring-color: rgb(245 230 211 / 0.2);
+  }
+  .dark .focus\:border-espresso:focus {
+    border-color: #f5e6d3;
+  }
+  .dark .bg-roast\/10 {
+    background-color: rgb(196 172 145 / 0.1);
   }
 }
