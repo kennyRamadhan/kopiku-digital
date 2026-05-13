@@ -18,9 +18,7 @@ function MenuPage() {
     <Section>
       <Container>
         <header className="mb-6">
-          <h1 className="font-serif text-espresso text-3xl sm:text-4xl">
-            {COPY.menu.pageTitle}
-          </h1>
+          <h1 className="font-serif text-espresso text-3xl sm:text-4xl">{COPY.menu.pageTitle}</h1>
           <p className="mt-2 text-roast">{COPY.menu.pageSubtitle}</p>
         </header>
 

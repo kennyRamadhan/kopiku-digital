@@ -9,11 +9,7 @@ interface PickupTimeSelectorProps {
 
 function PickupTimeSelector({ value, onChange }: PickupTimeSelectorProps) {
   return (
-    <div
-      role="radiogroup"
-      aria-label={COPY.order.pickupLabel}
-      className="flex flex-wrap gap-2"
-    >
+    <div role="radiogroup" aria-label={COPY.order.pickupLabel} className="flex flex-wrap gap-2">
       {COPY.order.pickupOptions.map((option) => {
         const isActive = value === option.id;
         return (

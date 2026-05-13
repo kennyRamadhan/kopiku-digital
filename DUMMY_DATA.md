@@ -267,7 +267,7 @@ All marketing text in casual Bahasa Indonesia. Agent should use these verbatim w
 export const COPY = {
   brand: {
     name: 'KopiKu',
-    nameAccent: 'Ku',  // the "Ku" gets caramel color
+    nameAccent: 'Ku', // the "Ku" gets caramel color
     tagline: 'Modern coffee, brewed digitally',
     location: 'Cikarang Selatan, Bekasi',
   },
@@ -285,7 +285,8 @@ export const COPY = {
     heroBadge: 'Cikarang Selatan · Grand opening',
     heroHeadline1: 'Kopi enak,',
     heroHeadline2: 'tanpa antri.',
-    heroSubtext: 'Pesan dari HP, ambil di toko. Mulai Rp 8.000 — siap dalam 15 menit, WiFi 50Mbps gratis sambil nunggu.',
+    heroSubtext:
+      'Pesan dari HP, ambil di toko. Mulai Rp 8.000 — siap dalam 15 menit, WiFi 50Mbps gratis sambil nunggu.',
     heroCtaPrimary: 'Mulai pesan',
     heroCtaSecondary: 'Lihat menu',
     valuePropsTitle: 'Kenapa KopiKu?',
@@ -341,17 +342,21 @@ export const COPY = {
     ],
     confirmOrder: 'Konfirmasi pesanan',
     successTitle: 'Pesanan diterima!',
-    successSubtitle: 'Sampai ketemu di toko ya. Notifikasi bakal dikirim ke WhatsApp lu kalau pesanan udah siap.',
+    successSubtitle:
+      'Sampai ketemu di toko ya. Notifikasi bakal dikirim ke WhatsApp lu kalau pesanan udah siap.',
     successCta: 'Pesan lagi',
   },
 
   about: {
     pageTitle: 'Cerita di balik secangkir KopiKu.',
-    pageSubtitle: 'Lahir dari obsesi mahasiswa Cikarang yang males ngantri buat kopi enak. Sekarang jadi warung kopi digital pertama yang ngerti gimana ribetnya jadwal generasi muda.',
+    pageSubtitle:
+      'Lahir dari obsesi mahasiswa Cikarang yang males ngantri buat kopi enak. Sekarang jadi warung kopi digital pertama yang ngerti gimana ribetnya jadwal generasi muda.',
     visionLabel: 'VISI',
-    visionText: 'Jadi warung kopi digital pilihan utama generasi muda yang menggabungkan cita rasa Nusantara dengan teknologi terkini.',
+    visionText:
+      'Jadi warung kopi digital pilihan utama generasi muda yang menggabungkan cita rasa Nusantara dengan teknologi terkini.',
     missionLabel: 'MISI',
-    missionText: 'Kopi berkualitas dengan harga terjangkau, ekosistem pemesanan digital yang seamless, dan kontribusi nyata untuk pemberdayaan petani kopi lokal.',
+    missionText:
+      'Kopi berkualitas dengan harga terjangkau, ekosistem pemesanan digital yang seamless, dan kontribusi nyata untuk pemberdayaan petani kopi lokal.',
     teamTitle: 'Tim di balik KopiKu',
   },
 
@@ -391,7 +396,7 @@ export const COPY = {
 
 For the Contact page map, use Google Maps embed iframe pointing to Cikarang Selatan area. Use this exact embed URL (already URL-encoded for the general area):
 
-```
+````
 https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.5567!2d107.1334!3d-6.3447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjAnNDAuOSJTIDEwN8KwMDgnMDAuMCJF!5e0!3m2!1sen!2sid!4v1700000000000`
 
 Wrap in a responsive container:
@@ -406,7 +411,7 @@ Wrap in a responsive container:
     title="Lokasi KopiKu Digital"
   />
 </div>
-```
+````
 
 ---
 

@@ -23,9 +23,7 @@ function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-4">
-      <p className="text-xs tracking-[0.2em] font-medium text-caramel">
-        {COPY.contact.formTitle}
-      </p>
+      <p className="text-xs tracking-[0.2em] font-medium text-caramel">{COPY.contact.formTitle}</p>
 
       <Input
         label="Nama"

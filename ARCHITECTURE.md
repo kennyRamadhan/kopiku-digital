@@ -6,21 +6,22 @@ Reference document for all tech decisions, folder structure, naming, and styling
 
 ## Stack
 
-| Layer | Choice | Version | Rationale |
-|---|---|---|---|
-| Build tool | Vite | ^6.0.0 | Fast HMR, simple config, no SSR overhead |
-| UI lib | React | ^19.0.0 | Latest stable, consistent with portfolio standards |
-| Language | TypeScript | ^5.6.0 | Type safety for cart/menu domain, strict mode |
-| Styling | Tailwind CSS | ^3.4.0 | Utility-first, fast iteration, theme via config |
-| Routing | React Router | ^6.28.0 | Industry standard, declarative routes |
-| State | React Context | (built-in) | Cart-only state; no Zustand/Redux needed |
-| Icons | lucide-react | ^0.460.0 | Tree-shakeable, clean line icons matching cozy aesthetic |
-| Fonts | Google Fonts | (CDN) | Fraunces + Inter, loaded via `<link>` in `index.html` |
-| Linter | ESLint + typescript-eslint | latest | Default Vite React-TS template config |
-| Formatter | Prettier | ^3.4.0 | Single source of code style truth |
-| Deploy | Vercel | — | Zero-config static SPA hosting |
+| Layer      | Choice                     | Version    | Rationale                                                |
+| ---------- | -------------------------- | ---------- | -------------------------------------------------------- |
+| Build tool | Vite                       | ^6.0.0     | Fast HMR, simple config, no SSR overhead                 |
+| UI lib     | React                      | ^19.0.0    | Latest stable, consistent with portfolio standards       |
+| Language   | TypeScript                 | ^5.6.0     | Type safety for cart/menu domain, strict mode            |
+| Styling    | Tailwind CSS               | ^3.4.0     | Utility-first, fast iteration, theme via config          |
+| Routing    | React Router               | ^6.28.0    | Industry standard, declarative routes                    |
+| State      | React Context              | (built-in) | Cart-only state; no Zustand/Redux needed                 |
+| Icons      | lucide-react               | ^0.460.0   | Tree-shakeable, clean line icons matching cozy aesthetic |
+| Fonts      | Google Fonts               | (CDN)      | Fraunces + Inter, loaded via `<link>` in `index.html`    |
+| Linter     | ESLint + typescript-eslint | latest     | Default Vite React-TS template config                    |
+| Formatter  | Prettier                   | ^3.4.0     | Single source of code style truth                        |
+| Deploy     | Vercel                     | —          | Zero-config static SPA hosting                           |
 
 **Explicitly NOT used (and why):**
+
 - Next.js — overkill, no SSR/API needed
 - shadcn/ui — adds CVA + radix overhead; 6 simple components are easier hand-rolled
 - Zustand / Redux — cart state fits Context API perfectly
@@ -166,9 +167,18 @@ export default {
 @tailwind utilities;
 
 @layer base {
-  html { scroll-behavior: smooth; }
-  body { @apply bg-beige text-charcoal font-sans antialiased; }
-  h1, h2, h3, h4 { @apply font-serif text-espresso; }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-beige text-charcoal font-sans antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif text-espresso;
+  }
 }
 ```
 
@@ -182,12 +192,12 @@ export default {
 export type Category = 'kopi' | 'non-kopi' | 'cemilan' | 'bundle';
 
 export interface MenuItem {
-  id: string;              // slug e.g. 'es-kopi-susu'
+  id: string; // slug e.g. 'es-kopi-susu'
   name: string;
   category: Category;
   description: string;
-  price: number;           // rupiah, integer
-  image: string;           // Unsplash URL
+  price: number; // rupiah, integer
+  image: string; // Unsplash URL
   featured?: boolean;
   bestSeller?: boolean;
 }
@@ -254,8 +264,8 @@ interface CartContextValue {
   removeItem: (id: string) => void;
   updateQuantity: (id: string, qty: number) => void;
   clearCart: () => void;
-  subtotal: number;          // computed
-  totalItems: number;        // computed
+  subtotal: number; // computed
+  totalItems: number; // computed
 }
 ```
 
@@ -286,16 +296,16 @@ Mobile-first. Default styles target ~360px width. Breakpoints:
 
 **Per-page layout rules:**
 
-| Page | Mobile (default) | Tablet (md:) | Desktop (lg:) |
-|---|---|---|---|
-| Home — hero | Stacked, image below text | Stacked | Side-by-side (text left, image right) |
-| Home — value props | 2-col grid | 4-col grid | 4-col grid |
-| Home — featured menu | 1-col | 2-col | 3-col |
-| Menu — grid | 2-col | 3-col | 3-col |
-| Order — cart + summary | Stacked, summary below | Stacked | Side-by-side (cart left, summary right) |
-| About — vision/mission | Stacked | 2-col | 2-col |
-| About — team | 2-col | 4-col | 4-col |
-| Contact — info + map | Stacked, map below | Stacked | Side-by-side |
+| Page                   | Mobile (default)          | Tablet (md:) | Desktop (lg:)                           |
+| ---------------------- | ------------------------- | ------------ | --------------------------------------- |
+| Home — hero            | Stacked, image below text | Stacked      | Side-by-side (text left, image right)   |
+| Home — value props     | 2-col grid                | 4-col grid   | 4-col grid                              |
+| Home — featured menu   | 1-col                     | 2-col        | 3-col                                   |
+| Menu — grid            | 2-col                     | 3-col        | 3-col                                   |
+| Order — cart + summary | Stacked, summary below    | Stacked      | Side-by-side (cart left, summary right) |
+| About — vision/mission | Stacked                   | 2-col        | 2-col                                   |
+| About — team           | 2-col                     | 4-col        | 4-col                                   |
+| Contact — info + map   | Stacked, map below        | Stacked      | Side-by-side                            |
 
 **Navbar mobile behavior:** Below `md:`, collapse nav links into a hamburger menu (slide-down panel from top). The Pre-order CTA stays visible in the bar.
 
