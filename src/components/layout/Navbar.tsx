@@ -6,6 +6,7 @@ import Button from '../ui/Button';
 import { NAV_LINKS } from '../../lib/constants';
 import { cn } from '../../lib/utils';
 import { COPY } from '../../data/copy';
+import { useCart } from '../../hooks/useCart';
 
 const BRAND_BASE = COPY.brand.name.replace(COPY.brand.nameAccent, '');
 
@@ -13,8 +14,7 @@ function Navbar() {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // TODO: wire useCart() in Phase 4
-  const cartCount = 0;
+  const cartCount = useCart().totalItems;
 
   const isActive = (to: string) =>
     to === '/' ? location.pathname === '/' : location.pathname.startsWith(to);
