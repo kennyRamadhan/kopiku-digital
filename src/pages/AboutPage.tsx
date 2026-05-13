@@ -1,13 +1,14 @@
-import Container from '../components/ui/Container';
-import Section from '../components/ui/Section';
+import AboutHero from '../components/about/AboutHero';
+import VisionMission from '../components/about/VisionMission';
+import TeamGrid from '../components/about/TeamGrid';
 
 function AboutPage() {
   return (
-    <Container>
-      <Section>
-        <h1>About</h1>
-      </Section>
-    </Container>
+    <>
+      <AboutHero />
+      <VisionMission />
+      <TeamGrid />
+    </>
   );
 }
 
