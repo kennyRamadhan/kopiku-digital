@@ -16,12 +16,5 @@ export interface CartItem {
   quantity: number;
 }
 
-export interface TeamMember {
-  id: string;
-  name: string;
-  role: string;
-  avatarColor: 'espresso' | 'roast' | 'caramel';
-}
-
 export type PickupTimeOption = '15min' | '30min' | '1hour' | 'custom';
 export type PaymentMethod = 'qris' | 'gopay' | 'ovo' | 'transfer';

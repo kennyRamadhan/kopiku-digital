@@ -91,7 +91,14 @@ export const COPY = {
     missionLabel: 'MISI',
     missionText:
       'Kopi berkualitas dengan harga terjangkau, ekosistem pemesanan digital yang seamless, dan kontribusi nyata untuk pemberdayaan petani kopi lokal.',
-    teamTitle: 'Tim di balik KopiKu',
+    galleryTitle: 'Suasana KopiKu',
+    gallerySubtitle: 'Tempat ngumpul, ngoding, atau sekadar nyantai sambil ngopi.',
+    galleryAlts: {
+      interior: 'Interior hangat warung kopi dengan meja kayu',
+      barista: 'Barista sedang menuang espresso ke cangkir',
+      beans: 'Biji kopi sangrai close-up',
+      ambience: 'Suasana cafe dengan pencahayaan ambient',
+    },
   },
 
   contact: {
