@@ -3,6 +3,7 @@ import Container from '../ui/Container';
 import Section from '../ui/Section';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
+import SafeImage from '../ui/SafeImage';
 import { COPY } from '../../data/copy';
 import { PHOTOS } from '../../data/photos';
 
@@ -38,9 +39,10 @@ function Hero() {
 
           <div className="order-2 lg:order-none">
             <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-roast">
-              <img
+              <SafeImage
                 src={PHOTOS.heroLatte}
                 alt="Cafe latte with leaf rosetta art on a warm wooden surface"
+                fallbackLabel="Cafe Latte"
                 className="w-full h-full object-cover"
               />
             </div>

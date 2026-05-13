@@ -13,6 +13,7 @@ export interface CartContextValue {
 
 const STORAGE_KEY = 'kopiku-cart-v1';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const CartContext = createContext<CartContextValue | null>(null);
 
 interface CartProviderProps {
@@ -24,11 +25,14 @@ export function CartProvider({ children }: CartProviderProps) {
   const hydratedRef = useRef(false);
 
   useEffect(() => {
+    // Hydrate cart from localStorage on first mount. Synchronous setState in effect is
+    // intentional here — we need state set before the first paint that reads it.
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const parsed: unknown = JSON.parse(raw);
         if (Array.isArray(parsed)) {
+          // eslint-disable-next-line react-hooks/set-state-in-effect
           setItems(parsed as CartItem[]);
         }
       }

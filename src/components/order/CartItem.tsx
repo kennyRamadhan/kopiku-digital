@@ -1,5 +1,6 @@
 import { Minus, Plus, Trash2 } from 'lucide-react';
 import type { CartItem as CartItemType } from '../../types';
+import SafeImage from '../ui/SafeImage';
 import { useCart } from '../../hooks/useCart';
 import { formatRupiah } from '../../lib/utils';
 
@@ -26,9 +27,10 @@ function CartItem({ item }: CartItemProps) {
   return (
     <div className="flex items-center gap-3 py-3 border-b border-espresso/10 last:border-b-0">
       <div className="w-14 h-14 shrink-0 rounded-md overflow-hidden bg-roast/10">
-        <img
+        <SafeImage
           src={menuItem.image}
           alt={menuItem.name}
+          fallbackLabel={menuItem.name}
           loading="lazy"
           className="w-full h-full object-cover"
         />

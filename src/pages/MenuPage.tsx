@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Container from '../components/ui/Container';
 import Section from '../components/ui/Section';
+import Button from '../components/ui/Button';
+import Card from '../components/ui/Card';
 import MenuFilter, { type FilterValue } from '../components/menu/MenuFilter';
 import MenuCard from '../components/menu/MenuCard';
 import { MENU } from '../data/menu';
@@ -26,11 +28,25 @@ function MenuPage() {
           <MenuFilter activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-          {visibleItems.map((item) => (
-            <MenuCard key={item.id} item={item} />
-          ))}
-        </div>
+        {visibleItems.length === 0 ? (
+          <Card padding="lg" className="text-center">
+            <p className="text-roast">Belum ada menu di kategori ini.</p>
+            <Button
+              variant="secondary"
+              size="md"
+              className="mt-4"
+              onClick={() => setActiveCategory('all')}
+            >
+              Lihat semua menu
+            </Button>
+          </Card>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+            {visibleItems.map((item) => (
+              <MenuCard key={item.id} item={item} />
+            ))}
+          </div>
+        )}
       </Container>
     </Section>
   );

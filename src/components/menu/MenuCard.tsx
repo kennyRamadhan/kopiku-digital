@@ -2,6 +2,7 @@ import { Plus } from 'lucide-react';
 import type { MenuItem } from '../../types';
 import Card from '../ui/Card';
 import Badge from '../ui/Badge';
+import SafeImage from '../ui/SafeImage';
 import { formatRupiah } from '../../lib/utils';
 import { useCart } from '../../hooks/useCart';
 
@@ -15,9 +16,10 @@ function MenuCard({ item }: MenuCardProps) {
   return (
     <Card padding="sm" className="flex flex-col overflow-hidden">
       <div className="relative aspect-square w-full overflow-hidden rounded-md bg-roast/10 mb-3">
-        <img
+        <SafeImage
           src={item.image}
           alt={item.name}
+          fallbackLabel={item.name}
           loading="lazy"
           className="w-full h-full object-cover"
         />

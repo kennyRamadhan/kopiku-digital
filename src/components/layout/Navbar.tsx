@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, ShoppingBag, X } from 'lucide-react';
 import Container from '../ui/Container';
@@ -19,15 +19,37 @@ function Navbar() {
   const isActive = (to: string) =>
     to === '/' ? location.pathname === '/' : location.pathname.startsWith(to);
 
+  useEffect(() => {
+    // Close mobile menu on route change — canonical pattern, state belongs to the menu.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMobileOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const { overflow } = document.body.style;
+    document.body.style.overflow = 'hidden';
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = overflow;
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [mobileOpen]);
+
   return (
     <header className="sticky top-0 z-40 bg-beige/95 backdrop-blur border-b border-espresso/10">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-3 focus:py-2 focus:rounded-md focus:bg-espresso focus:text-cream focus:outline-none focus:ring-2 focus:ring-caramel"
+      >
+        Lewati ke konten utama
+      </a>
       <Container>
         <div className="flex items-center justify-between h-16">
-          <Link
-            to="/"
-            className="flex items-baseline gap-1 font-serif text-2xl"
-            onClick={() => setMobileOpen(false)}
-          >
+          <Link to="/" className="flex items-baseline gap-1 font-serif text-2xl">
             <span className="text-espresso">{BRAND_BASE}</span>
             <span className="text-caramel">{COPY.brand.nameAccent}</span>
             <span className="ml-1 text-[10px] tracking-widest text-roast font-sans font-medium">
@@ -90,37 +112,37 @@ function Navbar() {
         </div>
       </Container>
 
-      {mobileOpen && (
-        <div
-          id="mobile-menu"
-          className="md:hidden border-t border-espresso/10 bg-beige"
-        >
-          <Container>
-            <nav className="flex flex-col py-4 gap-1" aria-label="Mobile">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  onClick={() => setMobileOpen(false)}
-                  className={cn(
-                    'px-2 py-2 rounded-md text-base transition-colors',
-                    isActive(link.to)
-                      ? 'text-espresso font-medium bg-cream'
-                      : 'text-roast hover:text-espresso',
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link to="/order" onClick={() => setMobileOpen(false)} className="mt-2">
-                <Button variant="primary" size="md" className="w-full">
-                  {COPY.nav.preOrder}
-                </Button>
+      <div
+        id="mobile-menu"
+        className={cn(
+          'md:hidden overflow-hidden border-t border-espresso/10 bg-beige transition-all duration-200 ease-out',
+          mobileOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none',
+        )}
+      >
+        <Container>
+          <nav className="flex flex-col py-4 gap-1" aria-label="Mobile">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={cn(
+                  'px-2 py-2 rounded-md text-base transition-colors',
+                  isActive(link.to)
+                    ? 'text-espresso font-medium bg-cream'
+                    : 'text-roast hover:text-espresso',
+                )}
+              >
+                {link.label}
               </Link>
-            </nav>
-          </Container>
-        </div>
-      )}
+            ))}
+            <Link to="/order" className="mt-2">
+              <Button variant="primary" size="md" className="w-full">
+                {COPY.nav.preOrder}
+              </Button>
+            </Link>
+          </nav>
+        </Container>
+      </div>
     </header>
   );
 }

@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import Container from '../ui/Container';
 import Section from '../ui/Section';
 import Card from '../ui/Card';
+import SafeImage from '../ui/SafeImage';
 import { COPY } from '../../data/copy';
 import { MENU } from '../../data/menu';
 import { formatRupiah } from '../../lib/utils';
@@ -30,9 +31,10 @@ function FeaturedMenu() {
           {featured.map((item) => (
             <Card key={item.id} padding="sm" className="overflow-hidden flex flex-col">
               <div className="aspect-square w-full overflow-hidden rounded-md bg-roast/10 mb-3">
-                <img
+                <SafeImage
                   src={item.image}
                   alt={item.name}
+                  fallbackLabel={item.name}
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
