@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Agent + project handoff docs (local only, not for public repo)
+AGENTS.md
+CLAUDE.md
+EXECUTION_PROMPT.md
+HANDOFF_README.md
+README_TEMPLATE.md
