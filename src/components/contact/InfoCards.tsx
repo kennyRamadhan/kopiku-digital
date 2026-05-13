@@ -5,14 +5,14 @@ function InfoCards() {
   return (
     <div className="space-y-4">
       <Card padding="md">
-        <p className="text-xs tracking-[0.2em] font-medium text-caramel">
+        <p className="text-xs tracking-[0.2em] font-medium text-caramelDeep">
           {COPY.contact.addressLabel}
         </p>
         <p className="mt-2 text-charcoal leading-relaxed">{COPY.contact.addressText}</p>
       </Card>
 
       <Card padding="md">
-        <p className="text-xs tracking-[0.2em] font-medium text-caramel">
+        <p className="text-xs tracking-[0.2em] font-medium text-caramelDeep">
           {COPY.contact.hoursLabel}
         </p>
         <dl className="mt-2 space-y-1.5">
@@ -26,7 +26,7 @@ function InfoCards() {
       </Card>
 
       <Card padding="md">
-        <p className="text-xs tracking-[0.2em] font-medium text-caramel">
+        <p className="text-xs tracking-[0.2em] font-medium text-caramelDeep">
           {COPY.contact.socialLabel}
         </p>
         <dl className="mt-2 space-y-1.5">

@@ -51,7 +51,7 @@ function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-baseline gap-1 font-serif text-2xl">
             <span className="text-espresso">{BRAND_BASE}</span>
-            <span className="text-caramel">{COPY.brand.nameAccent}</span>
+            <span className="text-caramelDeep">{COPY.brand.nameAccent}</span>
             <span className="ml-1 text-[10px] tracking-widest text-roast font-sans font-medium">
               DIGITAL
             </span>

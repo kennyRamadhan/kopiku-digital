@@ -8,6 +8,7 @@ export default {
         espresso: '#3D2817',
         roast: '#6F4E37',
         caramel: '#C68B59',
+        caramelDeep: '#A0612C',
         cream: '#F5E6D3',
         beige: '#FAF6F0',
         charcoal: '#2C1810',

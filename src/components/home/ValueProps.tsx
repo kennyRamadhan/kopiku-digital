@@ -15,6 +15,9 @@ function ValueProps() {
   return (
     <Section className="bg-cream/40">
       <Container>
+        <h2 className="font-serif text-espresso text-2xl sm:text-3xl text-center mb-8">
+          {COPY.home.valuePropsTitle}
+        </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {COPY.home.valueProps.map((prop) => {
             const Icon = ICON_MAP[prop.icon] ?? Star;

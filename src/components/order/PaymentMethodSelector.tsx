@@ -35,7 +35,7 @@ function PaymentMethodSelector({ value, onChange }: PaymentMethodSelectorProps) 
             >
               <span className="font-medium text-espresso">{method.label}</span>
               {recommended && (
-                <span className="mt-1 text-[11px] uppercase tracking-wider text-caramel font-medium">
+                <span className="mt-1 text-[11px] uppercase tracking-wider text-caramelDeep font-medium">
                   Recommended
                 </span>
               )}

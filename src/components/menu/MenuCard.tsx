@@ -30,7 +30,7 @@ function MenuCard({ item }: MenuCardProps) {
         )}
       </div>
 
-      <h3 className="font-serif text-espresso text-lg leading-snug">{item.name}</h3>
+      <h2 className="font-serif text-espresso text-lg leading-snug">{item.name}</h2>
       <p className="mt-1 text-sm text-roast line-clamp-2 flex-1">{item.description}</p>
 
       <div className="mt-3 flex items-center justify-between gap-2">
