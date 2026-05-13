@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+if grep -iqE "Co-Authored-By:.*(Claude|anthropic)" "$1"; then
+  echo "ERROR: AI attribution detected in commit message. Remove Co-Authored-By lines." >&2
+  exit 1
+fi
+exit 0
